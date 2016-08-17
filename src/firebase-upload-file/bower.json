@@ -1,0 +1,27 @@
+{
+  "name": "firebase-upload-file",
+  "version": "1.0.0",
+  "description": "Your component description",
+  "keywords": [
+    "dp",
+    "data",
+    "provider"
+  ],
+  "main": [
+    "firebase-upload-file.html"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.4.0",
+    "polymerfire": "firebase/polymerfire#^0.9.4",
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.2.5",
+    "iron-component-page": "PolymerElements/iron-component-page#^1.1.7"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page",
+    "web-component-tester": "*",
+    "test-fixture": "polymerelements/test-fixture#^1.0.0"
+  },
+  "resolutions": {
+    "polymer": "^1.2.1"
+  }
+}

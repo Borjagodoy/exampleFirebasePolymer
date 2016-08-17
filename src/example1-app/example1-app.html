@@ -1,4 +1,11 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../../bower_components/paper-input/paper-textarea.html">
+<link rel="import" href="../../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../bower_components/polymerfire/firebase-app.html">
+<link rel="import" href="../../bower_components/polymerfire/firebase-document.html">
+
 
 <dom-module id="example1-app">
   <template>
@@ -7,7 +14,33 @@
         display: block;
       }
     </style>
-    <h2>Hello [[prop1]]</h2>
+      <firebase-app
+        name="example"
+        api-key="AIzaSyBdMIPz3IsiXzMI0K3cxGCZmvUL8jsN5UQ"
+        auth-domain="example1-2bfd0.firebaseapp.com"
+        database-url="https://example1-2bfd0.firebaseio.com"
+        storage-bucket= "example1-2bfd0.appspot.com">
+      </firebase-app>
+      <firebase-document
+        name="example"
+        path="/users"
+        data="{{userData}}">
+      </firebase-document>
+      <p>{{userData.userName}}</p>
+      <paper-card heading="¡Bienvenido {{user.displayName}}!">
+          <div class="card-content">
+          <form is="iron-form" method="get" action="/" id="basic">
+              <paper-input name="user-name" label="User name" value="{{user.userName}}" char-counter auto-validate pattern="[0-9a-zA-Z_\-]{4,12}" error-message="Username must have between 4 and 12 letters, numbers, - or _." required></paper-input>
+              <paper-input name="city" value="{{user.city}}" label="City"></paper-input>
+              <paper-textarea name="Bio" label="Bio" value="{{user.biografy}}"  char-counter maxlength="250"></paper-textarea>
+              <br>
+              <div class="output"></div>
+            </form>
+          </div>
+          <div class="card-actions">
+            <paper-button class="send" on-tap="sendUserData">Send</paper-button>
+          </div>
+       </paper-card>
   </template>
 
   <script>
@@ -20,7 +53,20 @@
           type: String,
           value: 'example1-app',
         },
+        user: {
+          type: Object,
+          value:{"userName":"",
+                  "city":""}
+        },
+        userData:{
+          type: Object
+        }
       },
+      sendUserData: function(){
+        this.set('userData',this.user);
+                console.log(this.user)
+
+      }
 
     });
   </script>

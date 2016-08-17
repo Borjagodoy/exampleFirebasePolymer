@@ -1,0 +1,26 @@
+<link rel="import" href="/components/polymer/polymer.html">
+<!--
+`<firebase-upload-file>` Upload file/image to firebase storage.
+
+Waits firebase name, file type to upload and directory name 
+
+_Example_:
+
+  <firebase-upload-file firebase-name='endosement' file-type='image/*' dir='img/' title='Upload image'></firebase-upload-file>
+
+@demo demo/index.html
+-->
+<dom-module id="firebase-upload-file">
+  <style>
+    h4{
+      text-align: center;
+      font-size: 24px;
+    }
+  </style>
+  <template>
+    <h4>[[title]]</h4>
+    <input type="file" id="image" value="upload" accept="[[fileType]]" on-change="_uploadFile"/>
+  </template>
+<script src="firebase-upload-file.js"></script>
+
+</dom-module>

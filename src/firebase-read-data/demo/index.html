@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <title>Demo firebase-write-data</title>
+
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../bower_components/polymer/polymer.html">
+    <link rel='import' href='../../service-caller-form/service-caller-form.html'>
+    <link rel="import" href="../firebase-write-data.html">
+    <link rel="import" href="/bower_components/polymerfire/firebase-app.html">
+
+  </head>
+
+  <body>
+      <firebase-app
+            name="endosement"
+            auth-domain="endorsement-cards.firebaseapp.com"
+            database-url="https://endorsement-cards.firebaseio.com"
+            api-key="AIzaSyCVogxnNFq5w4UgmxPieHodm1u5-_ZiGOE">
+          </firebase-app>
+      <firebase-write-data path="/users" app-name="endosement" ></firebase-write-data>
+    <script type="text/javascript" src="js/demo.js"></script>
+  </body>
+</html>

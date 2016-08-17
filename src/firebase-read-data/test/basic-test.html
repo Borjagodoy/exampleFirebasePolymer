@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="../../web-component-tester/browser.js"></script>
+    <script src="../../test-fixture/test-fixture-mocha.js"></script>
+
+    <link rel="import" href="../../polymer/polymer.html">
+    <link rel="import" href="../firebase-data.html">
+  </head>
+
+  <body>
+    <test-fixture id="myEl">
+      <template>
+        <firebase-data></firebase-data>
+      </template>
+    </test-fixture>
+
+    <script>
+      suite('<firebase-data> tag', function() {
+        var myEl;
+
+        setup(function() {
+          myEl = fixture('myEl');
+        });
+
+        teardown(function() {
+          myEl.remove();
+        });
+
+        suite('in general', function() {
+          test('should be in document', function() {
+            expect(myEl).not.to.be.undefined;
+          });
+
+          test('should have "is" property equal to "firebase-data"', function() {
+            expect(myEl).to.have.property('is');
+            expect(myEl.is).to.be.equal('firebase-data');
+          });
+
+          test('should have "_serviceURL" property', function() {
+            expect(myEl).to.have.property('_serviceURL');
+          });
+        });
+
+        suite('Extend a base behavior', function() {
+          test('should have an implementation "_computeUrl" function that returns something that is not empty', function() {
+            var result = myEl._computeURL(myEl.endpoint, myEl._serviceURL);
+            
+            expect(myEl._computeURL).to.be.a('function');
+            expect(result).to.be.a('string');
+            expect(result).not.to.be.empty;
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

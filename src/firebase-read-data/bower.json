@@ -1,0 +1,27 @@
+{
+  "name": "firebase-write-data",
+  "version": "1.0.0",
+  "description": "Your component description",
+  "keywords": [
+    "dp",
+    "data",
+    "provider"
+  ],
+  "main": [
+    "firebase-write-data.html"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.4.0",
+    "cells-ajax-behavior": "https://descinet.bbva.es/stash/scm/bbvacellsapi/cells-ajax-behavior.git",
+    "polymerfire": "firebase/polymerfire#^0.9.4"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page",
+    "web-component-tester": "*",
+    "test-fixture": "polymerelements/test-fixture#^1.0.0",
+    "service-caller-form": "https://descinet.bbva.es/stash/scm/CEL/service-caller-form.git"
+  },
+  "resolutions": {
+    "polymer": "^1.2.1"
+  }
+}

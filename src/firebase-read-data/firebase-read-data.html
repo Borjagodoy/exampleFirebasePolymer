@@ -1,0 +1,39 @@
+<link rel="import" href="/components/polymerfire/firebase-document.html">
+<link rel="import" href="/components/polymerfire/firebase-query.html">
+<!--
+# firebase-data
+
+Data provider firease description.
+
+Example:
+```html
+<firebase-read-data></firebase-read-data>
+```
+
+It return `list-data`, with the object that we has getting of aplications with name "appName" from firebase 'path', also, this component have a mapping method for the objects returns
+
+@demo demo/index.html
+-->
+<dom-module id="firebase-read-data">
+  <template>
+  	<div>
+      <firebase-document
+        id="document"
+        app-name="{{appName}}"
+        path="{{path}}"
+        data = "{{response}}"
+        >
+      </firebase-document>
+      <firebase-query
+        id="query"
+        app-name="{{appName}}"
+        path="{{path}}"
+        >
+      </firebase-query>
+     </div> 
+    </template>
+  
+
+</dom-module>
+  
+<script src="firebase-read-data.js"></script>
